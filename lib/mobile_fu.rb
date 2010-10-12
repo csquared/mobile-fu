@@ -40,6 +40,13 @@ module ActionController
         helper_method :in_mobile_view?
         helper_method :is_device?
       end
+
+      def enable_mobile_fu
+        include ActionController::MobileFu::InstanceMethods
+        helper_method :is_mobile_device?
+        helper_method :in_mobile_view?
+        helper_method :is_device?
+      end
       
       def is_mobile_device?
         @@is_mobile_device
